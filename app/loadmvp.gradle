@@ -1,0 +1,62 @@
+/*----------本地仓库----------*/
+apply plugin: 'maven'
+/**
+ * mvp相关依赖
+ */
+task loadMvp() {
+    // ①.下载统一版本管理文件，project.rootDir在不同的gradle会得到不一样的路径
+    def versionsFile = new File("${project.rootDir}/buildSrc/src/main/groovy/Config.groovy")
+    if (!versionsFile.exists()) {
+        versionsFile.getParentFile().mkdirs()
+        new URL('https://gitee.com/miekir/mvp-build/raw/master/Config.groovy')
+                .withInputStream{
+                    i -> versionsFile.withOutputStream{ it << i }
+                }
+    }
+
+    // ②.清单文件
+    def manifestFile = new File("${project.rootDir}/mvp/src/main/AndroidManifest.xml")
+    if (!manifestFile.exists()) {
+        manifestFile.getParentFile().mkdirs()
+        manifestFile.append("<?xml version=\"1.0\" encoding=\"utf-8\"?>" +
+                "\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\" package=\"com.itant.mvp\">" +
+                "\n</manifest>", 'UTF-8')
+    }
+    // ③.基础库下载
+    def mvpBuildFile = new File("${project.rootDir}/mvp/build.gradle")
+    if (!mvpBuildFile.exists()) {
+        mvpBuildFile.getParentFile().mkdirs()
+        new URL('https://gitee.com/miekir/mvp-build/raw/master/mvp.gradle').withInputStream{
+            i -> mvpBuildFile.withOutputStream{ it << i }
+                // settings.gradle文件
+                def settingGradleFile = new File("${project.rootDir}/settings.gradle")
+                def mvpInclude = "include ':mvp'"
+                def mvpDeclare = false
+                settingGradleFile.eachLine { line ->
+                    if (mvpInclude == line) {
+                        mvpDeclare = true
+                        return
+                    }
+                }
+                // 如果没有则引入
+                if (!mvpDeclare) {
+                    settingGradleFile.append("\n$mvpInclude", 'UTF-8')
+                }
+        }
+    }
+
+    // ④.gradle.properties增加android.enableJetifier=true（表示将依赖包也迁移到androidx）
+    def gradlePropertyFile = new File("${project.rootDir}/gradle.properties")
+    def enableJetifier = "android.enableJetifier=true"
+    def jetifier = false
+    gradlePropertyFile.eachLine { line ->
+        if (enableJetifier == line) {
+            jetifier = true
+            return
+        }
+    }
+    // 没有则添加
+    if (!jetifier) {
+        gradlePropertyFile.append("\n$enableJetifier", 'UTF-8')
+    }
+}

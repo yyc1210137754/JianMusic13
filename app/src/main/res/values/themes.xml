@@ -1,0 +1,39 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!--必须使用这个主题，同时支持AppCompat和MaterialComponents-->
+    <style name="MainStyle" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!--TextInputLayout默认stroke颜色-->
+        <item name="colorOnSurface">@color/black_dark</item>
+
+        <!--改变下面这个颜色可以改变返回按钮的颜色-->
+        <!--<item name="android:textColorSecondary">@color/black_theme</item>-->
+        <item name="colorPrimary">@color/red_bootstrap</item>
+        <!--<item name="colorPrimaryDark">@color/green_ka</item>-->
+        <item name="colorAccent">@color/yellow_bootstrap</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowActionBar">false</item>
+        <!--让状态栏透明-->
+        <!--<item name="android:windowTranslucentStatus">true</item>-->
+        <!--<item name="android:windowActionBarOverlay">true</item>-->
+        <!--<item name="android:statusBarColor">@color/green_whatsapp_status</item>-->
+        <!--<item name="android:windowDrawsSystemBarBackgrounds">true</item>-->
+
+        <!--默认背景颜色-->
+        <item name="android:colorBackground">@color/green_360</item>
+        <!--状态栏文字白色-->
+        <item name="android:windowLightStatusBar" tools:targetApi="23">false</item>
+        <!--<item name="android:windowAnimationStyle">@style/ActivityAnimation</item>-->
+
+        <!--用下面这个属性代替windowIsTranslucent，否则在8.0上配合portrait属性会导致闪退-->
+        <item name="android:windowDisablePreview">true</item>
+
+
+        <!--解决全屏的时候底部content和导航栏之间有一根白线的现象-->
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="TabLayoutTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">@dimen/text_title_ss</item>
+    </style>
+</resources>

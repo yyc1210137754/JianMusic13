@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--搜索栏-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="48dp"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="fitXY"
+        android:src="@mipmap/ic_empty"
+        app:tint="#ababab"/>
+</FrameLayout>

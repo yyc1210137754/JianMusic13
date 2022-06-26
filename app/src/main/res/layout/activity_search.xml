@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green_google"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+    <!--状态栏颜色与这里的对齐，与windowDisablePreview透明状态栏配合-->
+    <!--fitsSystemWindows如果不是在根布局，会和adjustPan冲突-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!--在下一层才设定高度，让fitsSystemWindows生效-->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_action_bar_s"
+            android:paddingStart="@dimen/padding_default"
+            android:paddingEnd="@dimen/padding_default">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_back"
+                app:tint="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="本地搜索"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_title" />
+        </FrameLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_bg_default"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_s"
+            android:layout_marginTop="@dimen/padding_default"
+            android:layout_marginEnd="@dimen/padding_s"
+            android:hint="请输入歌曲或歌手名字"
+            android:visibility="visible"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="4dp"
+            app:boxCornerRadiusBottomStart="4dp"
+            app:boxCornerRadiusTopEnd="4dp"
+            app:boxCornerRadiusTopStart="4dp"
+            app:boxStrokeWidth="1dp"
+            app:boxStrokeWidthFocused="1dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_key_words"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="30"
+                android:maxLines="1"
+                android:textSize="@dimen/text_title_ss" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_search_song"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/padding_s"
+            android:scrollbars="vertical" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!--状态栏颜色与这里的对齐，与windowDisablePreview透明状态栏配合-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/green_google"
+        android:fitsSystemWindows="true">
+        <!--在下一层才设定高度，让fitsSystemWindows生效-->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_action_bar_s"
+            android:paddingStart="@dimen/padding_default"
+            android:paddingEnd="@dimen/padding_default">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_back"
+                app:tint="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="音乐播放器"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_title" />
+        </FrameLayout>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_feedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="欢迎使用"
+        android:textColor="@color/black_text"
+        android:textSize="@dimen/text_title_ss"
+        android:layout_marginStart="@dimen/padding_default"
+        android:layout_marginEnd="@dimen/padding_default"
+        android:layout_marginTop="@dimen/padding_default" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding_default"
+        android:layout_marginEnd="@dimen/padding_default"
+        android:layout_marginTop="@dimen/padding_default"
+        android:hint="请输入过滤时长(秒)"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusBottomEnd="4dp"
+        app:boxCornerRadiusBottomStart="4dp"
+        app:boxCornerRadiusTopEnd="4dp"
+        app:boxCornerRadiusTopStart="4dp"
+        app:boxStrokeWidth="1dp"
+        app:boxStrokeWidthFocused="1dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:visibility="visible">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_duration_filter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_title_ss"
+            android:inputType="number"
+            android:maxLength="3"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <android.widget.Button
+        android:id="@+id/btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingStart="@dimen/padding_default"
+        android:paddingEnd="@dimen/padding_default"
+        android:minHeight="0dp"
+        android:layout_marginTop="@dimen/padding_default"
+        android:layout_marginStart="@dimen/padding_default"
+        android:layout_marginEnd="@dimen/padding_default"
+        android:paddingTop="@dimen/padding_default"
+        android:paddingBottom="@dimen/padding_default"
+        android:text="保存设置"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:background="@drawable/selector_btn_round"
+        style="?android:attr/borderlessButtonStyle"/>
+
+    <android.widget.Button
+        android:id="@+id/btn_clear_lyric"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingStart="@dimen/padding_default"
+        android:paddingEnd="@dimen/padding_default"
+        android:minHeight="0dp"
+        android:layout_marginTop="@dimen/padding_default"
+        android:layout_marginStart="@dimen/padding_default"
+        android:layout_marginEnd="@dimen/padding_default"
+        android:paddingTop="@dimen/padding_default"
+        android:paddingBottom="@dimen/padding_default"
+        android:text="清除歌词缓存"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:background="@drawable/selector_btn_round"
+        style="?android:attr/borderlessButtonStyle"/>
+</LinearLayout>

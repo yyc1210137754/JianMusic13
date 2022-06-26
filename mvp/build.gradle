@@ -1,0 +1,78 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion Config.compileSdk
+    buildToolsVersion Config.buildTools
+
+    defaultConfig {
+        minSdkVersion Config.minSdk
+        targetSdkVersion Config.targetSdk
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            //buildConfigField("boolean", "IS_DEBUG_MODE", "true")
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            minifyEnabled false
+            //buildConfigField("boolean", "IS_DEBUG_MODE", "false")
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar','*.aar'])
+
+    testImplementation "junit:junit:${Config.test_junit}"
+    testImplementation "androidx.test.ext:junit:${Config.test_ext}"
+    testImplementation "androidx.test.espresso:espresso-core:${Config.test_espresso}"
+    
+    // 使用 retrofit + rx + gson 实现网络请求与解析
+    def retrofit_version = '2.9.0'
+    // 使用 retrofit + rx + gson 实现网络请求与解析---->
+    api "com.squareup.retrofit2:retrofit:$retrofit_version"
+    // 衔接 retrofit 和 rxjava
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
+    // 衔接 retrofit 和 gson
+    api 'com.squareup.retrofit2:converter-gson:2.8.1'
+
+    // 此处一定要注意使用RxJava2的版本，和Retrofit配合
+    api 'io.reactivex.rxjava2:rxjava:2.2.17'
+    api 'io.reactivex.rxjava2:rxandroid:2.1.1'
+
+    // GSON
+    api 'com.google.code.gson:gson:2.8.6'
+
+    // 打印网络请求日志框架
+    api "com.squareup.okhttp3:logging-interceptor:3.6.0"
+
+    // 通用设计
+    //api "androidx.appcompat:appcompat:${Config.google_appcompat}"
+    //api "com.google.android.material:material:${Config.google_material}"
+    api "androidx.activity:activity:1.2.0-beta01"
+    // ViewBinding
+    api 'androidx.databinding:viewbinding:4.2.0@aar'
+
+    // kotlin
+    api "androidx.lifecycle:lifecycle-extensions:${Config.androidLifecycle}"
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:${Config.androidLifecycle}"
+    api "androidx.lifecycle:lifecycle-livedata-ktx:${Config.androidLifecycle}"
+    api "androidx.lifecycle:lifecycle-runtime-ktx:${Config.androidLifecycle}"
+    api "androidx.preference:preference-ktx:1.1.1"
+}

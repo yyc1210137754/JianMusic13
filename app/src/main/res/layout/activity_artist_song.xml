@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!--状态栏颜色与这里的对齐，与windowDisablePreview透明状态栏配合-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/green_google"
+        android:fitsSystemWindows="true">
+        <!--在下一层才设定高度，让fitsSystemWindows生效-->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_action_bar_s"
+            android:paddingStart="@dimen/padding_default"
+            android:paddingEnd="@dimen/padding_default">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_back"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_artist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_title"
+                android:maxLines="1"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"/>
+        </FrameLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_artist_song"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="@dimen/padding_s"
+            android:scrollbars="vertical"
+            android:clipToPadding="false"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_playing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            app:fabSize="normal"
+            android:src="@mipmap/ic_empty"
+            app:backgroundTint="@color/green_ka"
+            app:tint="@color/white"
+            android:contentDescription="当前播放"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="24dp"
+            android:layout_marginEnd="32dp"/>
+    </FrameLayout>
+</LinearLayout>

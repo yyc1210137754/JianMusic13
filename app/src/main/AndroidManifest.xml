@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.itant.music">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" tools:ignore="ProtectedPermissions" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="音乐播放器"
+        android:name=".MusicApp"
+        android:theme="@style/MainStyle">
+        <activity
+            android:name="com.itant.music.main.MainMusicActivity"
+            android:configChanges="locale|orientation|screenSize|keyboardHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".main.setting.SettingActivity"
+            android:configChanges="locale|orientation|screenSize|keyboardHidden"/>
+
+        <activity
+            android:name=".main.artist.song.ArtistSongActivity"
+            android:configChanges="locale|orientation|screenSize|keyboardHidden"/>
+
+        <activity
+            android:name=".main.search.SearchActivity"
+            android:configChanges="locale|orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="adjustPan"/>
+
+        <activity
+            android:name=".main.detail.MusicDetailActivity"
+            android:configChanges="locale|orientation|screenSize|keyboardHidden"/>
+
+        <service android:name=".play.MusicService" />
+    </application>
+
+</manifest>

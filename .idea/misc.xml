@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/jian-music-master/app/src/main/res/drawable/ic_back.xml" value="0.1" />
+        <entry key="..\:/jian-music-master/app/src/main/res/drawable/ic_close.xml" value="0.1" />
+        <entry key="..\:/jian-music-master/app/src/main/res/drawable/ic_menu.xml" value="0.1" />
+        <entry key="..\:/jian-music-master/app/src/main/res/drawable/ic_pause.xml" value="0.1" />
+        <entry key="..\:/jian-music-master/app/src/main/res/drawable/ic_star.xml" value="0.1" />
+        <entry key="..\:/jian-music-master/app/src/main/res/drawable/shape_artist_circle.xml" value="0.1" />
+        <entry key="..\:/jian-music-master/app/src/main/res/layout/activity_artist_song.xml" value="0.17806484295845998" />
+        <entry key="..\:/jian-music-master/app/src/main/res/layout/activity_main.xml" value="0.17806484295845998" />
+        <entry key="..\:/jian-music-master/app/src/main/res/layout/activity_music_detail.xml" value="0.17806484295845998" />
+        <entry key="..\:/jian-music-master/app/src/main/res/layout/activity_search.xml" value="0.17806484295845998" />
+        <entry key="..\:/jian-music-master/app/src/main/res/layout/activity_setting.xml" value="0.1" />
+        <entry key="..\:/jian-music-master/app/src/main/res/layout/fragment_artist.xml" value="0.17806484295845998" />
+        <entry key="..\:/jian-music-master/app/src/main/res/layout/fragment_song.xml" value="0.17806484295845998" />
+        <entry key="..\:/jian-music-master/app/src/main/res/layout/fragment_star.xml" value="0.17806484295845998" />
+        <entry key="..\:/jian-music-master/app/src/main/res/layout/item_artist.xml" value="0.17806484295845998" />
+        <entry key="..\:/jian-music-master/app/src/main/res/layout/item_song.xml" value="0.17806484295845998" />
+        <entry key="..\:/jian-music-master/app/src/main/res/layout/view_divider.xml" value="0.17806484295845998" />
+        <entry key="..\:/jian-music-master/app/src/main/res/layout/view_empty.xml" value="0.17806484295845998" />
+        <entry key="..\:/jian-music-master/app/src/main/res/layout/view_index.xml" value="0.17806484295845998" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

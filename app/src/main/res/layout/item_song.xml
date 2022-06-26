@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/padding_s"
+    android:layout_marginBottom="@dimen/padding_s"
+    android:layout_marginEnd="@dimen/padding_s"
+    app:cardBackgroundColor="@color/whiteAlpha10"
+    app:cardCornerRadius="@dimen/padding_sss"
+    app:strokeWidth="@dimen/padding_sss"
+    android:id="@+id/mcv_song">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="@dimen/height_action_bar"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/padding_default"
+        android:paddingTop="@dimen/padding_s"
+        android:paddingEnd="@dimen/padding_default"
+        android:paddingBottom="@dimen/padding_s">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@color/black_title"
+                android:textSize="@dimen/text_title_s"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:id="@+id/iv_star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_ss"
+                android:src="@drawable/ic_star"
+                app:tint="@color/red_droid"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_ss"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_format"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_music_format_h"
+                android:gravity="center"
+                android:minWidth="38dp"
+                android:paddingStart="@dimen/padding_ss"
+                android:paddingTop="1.5dp"
+                android:paddingEnd="@dimen/padding_ss"
+                android:paddingBottom="1.5dp"
+                android:textColor="@color/red_droid"
+                android:textSize="@dimen/text_sss"
+                android:textStyle="bold"
+                android:textAllCaps="true"/>
+
+            <TextView
+                android:id="@+id/tv_artist"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/padding_ss"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/text_normal_p" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="@dimen/padding_ss">
+            <TextView
+                android:id="@+id/tv_total_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/text_normal" />
+
+            <TextView
+                android:id="@+id/tv_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/text_normal"
+                android:layout_marginStart="@dimen/padding_s"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_playing"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/shape_playing"
+        android:layout_margin="3dp"/>
+</com.google.android.material.card.MaterialCardView>
+
+

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_song"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/padding_s"
+        android:scrollbars="vertical"
+        android:clipToPadding="false" />
+    <!--在向上滑动RecyclerView时，子View绘制到父View的padding里面-->
+
+    <com.itant.music.widget.index.IndexView
+        android:id="@+id/iv_song"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:visibility="gone"/>
+</FrameLayout>
